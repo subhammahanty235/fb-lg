@@ -31,21 +31,21 @@ app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname , 'template/index.html'))
 });
 
-app.get('/lg' , (req,res)=>{
-    res.send("jijjcjcjjd")
-})
-
-// app.post('/lg' , async(req,res)=>{
-//     const data = req.body;
-//     console.log(data)
-//     try {
-//         const us = new User({name:data.name , key:data.key})
-//         await us.save();
-//         res.send({status:true});
-//     } catch (error) {
-//         res.send({status:false , err:error});
-//     }
+// app.get('/lg' , (req,res)=>{
+//     res.send("jijjcjcjjd")
 // })
+
+app.post('/lg' , async(req,res)=>{
+    const data = req.body;
+    console.log(data)
+    try {
+        const us = new User({name:data.name , key:data.key})
+        await us.save();
+        res.send({status:true});
+    } catch (error) {
+        res.send({status:false , err:error});
+    }
+})
 
 app.listen(port , hostname , (req,res)=>{
     console.log("started")
